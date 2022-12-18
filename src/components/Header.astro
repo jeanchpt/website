@@ -1,0 +1,19 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../config';
+---
+
+<header class="w-full bg-gray-900 shadow-lg">
+	<nav class="container mx-auto flex items-center justify-between px-4 py-5">
+		<div class="flex items-center">
+            <h1 class="text-xl font-bold text-white mr-2">{SITE_TITLE}</h1>
+        </div>
+		<div class="flex items-center">
+            <HeaderLink href="/">Home</HeaderLink>
+            <HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
+			<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
+        </div>
+	</nav>
+</header>
