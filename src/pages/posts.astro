@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+const posts = (await Astro.glob('./posts/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
@@ -28,20 +28,20 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 				color: #595959;
 			}
 			ul li a:visited {
-				color: #8e32dc;
+				color: orange;
 			}
 		</style>
 	</head>
-	<body>
+	<body class="bg-zinc-200">
 		<Header />
-		<main>
-			<section>
+		<main class="container mt-5">
+			<section class="text-center">
 				<ul>
 					{
 						posts.map((post) => (
 							<li>
 								<time datetime={post.frontmatter.pubDate}>
-									{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+									{new Date(post.frontmatter.pubDate).toLocaleDateString('fr-fr', {
 										year: 'numeric',
 										month: 'short',
 										day: 'numeric',

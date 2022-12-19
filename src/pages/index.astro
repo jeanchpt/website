@@ -10,40 +10,34 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-gray-800">
+	<body class="bg-zinc-200">
 		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		<main class="container mx-auto">
+			<header class="text-center mt-10 mb-12">
+			  <h1 class="text-3xl font-bold leading-tight">Hello ! Moi c'est Jean</h1>
+			  <p class="text-xl font-light leading-normal mt-2">Je suis étudiant en sécurité informatique à l'université d'Aix-Marseille</p>
+			</header>
+			<section class="mb-20">
+			  <h2 class="text-2xl font-bold leading-tight mb-4">Voici quelques-uns de mes projets !</h2>
+			  <div class="grid grid-cols-3 gap-4">
+				<div class="bg-white rounded-lg shadow-lg p-6">
+				  <h3 class="text-xl font-bold leading-tight mb-2">Projet 1</h3>
+				  <p class="text-base font-light leading-normal mt-2"></p>
+				</div>
+				<div class="bg-white rounded-lg shadow-lg p-6">
+				  <h3 class="text-xl font-bold leading-tight mb-2">Projet 2</h3>
+				  <p class="text-base font-light leading-normal mt-2"></p>
+				</div>
+				<div class="bg-white rounded-lg shadow-lg p-6">
+				  <h3 class="text-xl font-bold leading-tight mb-2">Projet 3</h3>
+				  <p class="text-base font-light leading-normal mt-2"></p>
+				</div>
+			  </div>
+			</section>
+			<section class="mb-20">
+			  <h2 class="text-2xl font-bold leading-tight mb-4">Mes diplômes et certifications</h2>
+			  
+			</section>
 		</main>
 		<Footer />
 	</body>
