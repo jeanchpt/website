@@ -16,7 +16,7 @@ for (int i=0; i<10; i++) {
 }
 ```
 
-Mais aussi une liste :
+Mais aussi une **liste** :
 
 1. Un premier élément
 2. Un deuxième élément

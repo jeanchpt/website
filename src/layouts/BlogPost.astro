@@ -1,7 +1,9 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Content from "../components/Content.astro";
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 export interface Props {
 	content: {
@@ -13,41 +15,33 @@ export interface Props {
 }
 
 const {
-	content: { title, description, pubDate, updatedDate},
+	content: { title, description, pubDate, updatedDate },
 } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-		</style>
-	</head>
-
+	<header>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</header>
 	<body>
 		<Header />
-		<main class="container m-auto">
-			<article>
-				<h1 class="title">{title}</h1>
-				{pubDate && <time>{pubDate}</time>}
-				{
-					updatedDate && (
-						<div>
-							Modifié le <time>{updatedDate}</time>
-						</div>
-					)
-				}
-				<hr />
+		<main class="pt-[56px]">
+			<Content>
+				<h1 class="text-3xl font-bold">{title}</h1>
+				<h2 class="text-xl italic">{description}</h2>
+				<div class="font-light">
+					{pubDate && <time>{pubDate}</time>}
+					{
+						updatedDate && (
+							<div>
+								Modifié le <time>{updatedDate}</time>
+							</div>
+						)
+					}
+				</div>
+				<hr class="border-top border-zinc-300 my-4" />
 				<slot />
-			</article>
+			</Content>
 		</main>
 		<Footer />
 	</body>
