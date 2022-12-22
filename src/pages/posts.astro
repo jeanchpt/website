@@ -17,10 +17,10 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-zinc-200">
+	<body>
 		<Header />
-		<main class="mt-10">
-			<section class="container mb-10 mx-auto">
+		<main class="bg-zinc-200 min-h-screen">
+			<section class="container pt-10 mx-auto">
 				<h2 class="text-2xl font-bold leading-tight mb-4">Articles</h2>
 				<div class="container mx-auto">
 					<div class="grid grid-cols-4 gap-10">

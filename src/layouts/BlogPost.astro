@@ -1,9 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Content from "../components/Content.astro";
 import BaseHead from "../components/BaseHead.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 export interface Props {
 	content: {
@@ -25,23 +24,30 @@ const {
 	</header>
 	<body>
 		<Header />
-		<main class="pt-[56px]">
-			<Content>
-				<h1 class="text-3xl font-bold">{title}</h1>
-				<h2 class="text-xl italic">{description}</h2>
-				<div class="font-light">
-					{pubDate && <time>{pubDate}</time>}
-					{
-						updatedDate && (
-							<div>
-								Modifié le <time>{updatedDate}</time>
-							</div>
-						)
+		<main class="bg-zinc-200 min-h-screen">
+			<div class="container pt-10 mx-auto">
+				<div class="bg-white rounded-xl shadow-lg mx-auto p-5 max-w-4xl">
+					<div class="font-light text-right">
+						{pubDate && <time>{pubDate}</time>}
+						{
+							updatedDate && (
+								<div>
+									Modifié le <time>{updatedDate}</time>
+								</div>
+							)
+						}
+					</div>
+					{updatedDate ? 
+						<article class="prose min-w-fit mx-auto -mt-12">
+							<slot />
+						</article> : 
+						<article class="prose min-w-fit mx-auto -mt-8">
+							<slot />
+						</article>
 					}
+					
 				</div>
-				<hr class="border-top border-zinc-300 my-4" />
-				<slot />
-			</Content>
+			</div>
 		</main>
 		<Footer />
 	</body>
