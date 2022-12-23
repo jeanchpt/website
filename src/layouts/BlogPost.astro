@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import BaseHead from "../components/BaseHead.astro";
+import BasicScripts from "../components/BasicScripts.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 
 export interface Props {
@@ -24,10 +25,11 @@ const {
 	</header>
 	<body>
 		<Header />
-		<main class="bg-zinc-200 min-h-screen">
+		<BasicScripts />
+		<main class="bg-zinc-200 min-h-screen dark:bg-zinc-900">
 			<div class="container pt-10 mx-auto">
-				<div class="bg-white rounded-xl shadow-lg mx-auto p-5 max-w-4xl">
-					<div class="font-light text-right">
+				<div class="bg-white rounded-xl shadow-lg mx-auto p-5 max-w-4xl dark:bg-zinc-800">
+					<div class="font-light text-right dark:text-zinc-300">
 						{pubDate && <time>{pubDate}</time>}
 						{
 							updatedDate && (
@@ -38,10 +40,10 @@ const {
 						}
 					</div>
 					{updatedDate ? 
-						<article class="prose min-w-fit mx-auto -mt-12">
+						<article class="prose prose-orange min-w-fit mx-auto -mt-12 dark:prose-invert">
 							<slot />
 						</article> : 
-						<article class="prose max-w-fit mx-auto -mt-8">
+						<article class="prose prose-orange max-w-fit mx-auto -mt-8 dark:prose-invert">
 							<slot />
 						</article>
 					}
