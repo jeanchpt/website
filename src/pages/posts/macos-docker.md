@@ -4,90 +4,63 @@ title: "MacOS Docker"
 description: "Installer MacOS sur une machine Docker"
 pubDate: "22 Dec. 2022"
 #updatedDate: "22 Dec. 2022"
-heroImage: "/heroes/macos-docker.jpg"
+heroImage: "/heroes/docker.png"
 ---
 
-# Tunnel IPv6 sur IPv4
+# MacOS sur Docker
 
-> Il s'agit du projet final de l'UE Réseaux du M1 Informatique AMU. Il s'agit d'un programme permettant l'interconnexion de deux réseaux IPv6 par le biais d'un réseau IPv4. Projet en cours de développement, la version la plus à jour se trouve donc sur la branche dev.
+>  Ce guide d'installation est basé sur le travail de : [sickcodes](https://github.com/sickcodes/Docker-OSX) et de [Chris Titus Tech](https://christitus.com)
 
-```
-Structure du projet
-├── doc
-│   ├── configs           # résultats des configurations au format .txt (ip a et ip r)
-│   ├── images           # images et captures d'écrans
-│   ├── wireshark        # captures wireshark
-│   └── rapport.pdf      # rapport du projet
-├── partage              # dossier partagé entre les VMs
-│   └── tunnel64         # répertoire contenant l'application
-│       ├── inc          # fichiers d'en-têtes
-│       ├── src          # fichiers sources
-│       ├── scripts      # scripts de configuration
-│       └── Makefile      # pour compiler le projet
-│       
-├── VM1
-│   ├── Vagrantfile       # fichier propre à vagrant
-│   ├── config.yml        # fichier de configuration ansible
-│   └── tunnel64.conf    # fichier de configuration du tunnel
-├── VM2
-├── VM3
-├── VM1-6
-└── VM3-6     
-```
+## Installation de Docker
 
-## Compilation
+L'installation de docker dépend du système d'exploitation. Les informations ci-dessous ne sont donc pas toujours valables. Se référer au site officiel de docker et à sa documentation. 
 
-Pour récupérer le code source du projet :
+Cependant, sous **Archlinux** voilà comment il est possible de procéder :
 
 ```sh
-git clone https://github.com/JeanChpt/tunnel64.git
+yay -S docker
+sudo usermod -aG docker $USER
 ```
 
-Et enfin pour compiler :
+Après cela on procède à un redémarage et on vérifie que l'utilisateur a bien été ajouté au groupe docker avec la commande :
 
 ```sh
-cd partage/tunnel64
-make
+groups
 ```
 
-> Concernant la compilation, celle-ci est effectuée automatiquement par le fichier de configuration avec ansible. Il n'est donc pas nécessaire de compiler à la main.
+Si la sortie de cette commande contient le groupe **docker**, tout est bon vous pouvez passer à la suite. 
 
-Pour nettoyer les répertoires de compilation, utiliser la commande :
+## Installation de MacOS
+
+Pour installer MacOS Monterey on utilise la commande suivante :
 
 ```sh
-make veryclean
+docker run -it \
+    --device /dev/kvm \
+    -p 50922:10022 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e "DISPLAY=${DISPLAY:-:0.0}" \
+    -e GENERATE_UNIQUE=true \
+    -e MASTER_PLIST_URL='https://raw.githubusercontent.com/sickcodes/osx-serial-generator/master/config-custom.plist' \
+    sickcodes/docker-osx:monterey
+
+# docker build -t docker-osx --build-arg SHORTNAME=monterey
 ```
 
-## Exécution
+Il est tout à fait possible d'installer un autre système en se référant à [cette documentation](https://github.com/sickcodes/Docker-OSX).
 
-Dans le répertoire du projet se trouve un répertoire pour chaque VM. Ici seulement deux VMs nous intéresseront pour le tunnel. Il s'agit de VM1 et de VM3. Pour lancer VM1 et démarrer le tunnel vers VM3, faire depuis le répertoire de VM1 :
+Une fois que le système se lance, on efface le disque virtuel de 270 Go et on procède à la réinstallation de MacOS. L'installation se poursuit avec une succession de redémarrages mais une fois terminée, on lance le système et on finalise en suivant les étapes.
+
+## Démarrage de MacOS
+
+Pour lancer notre système fraichement créé, on trouve son nom avec la commande :
 
 ```sh
-vagrant up
-cd /mnt/partage/tunnel64
-./bin/tunnel64
+docker ps -a
 ```
 
-Pour lancer VM3  et démarrer le tunnel vers VM1, faire depuis le répertoire de VM3 :
+Puis on le lance avec :
 
 ```sh
-vagrant up
-cd /mnt/partage/tunnel64
-./bin/tunnel64
+docker start nom-du-système
 ```
-
-> Attention, le tunnel lis sa configuration dans le fichier `tunnel64.conf` situé dans le répertoire `/vagrant` sur VM1 et VM3. Les fichiers sont préconfigurés pour ce projet, cependant il est possible de les modifier en respectant la structure ci-dessous :
-
-```
-# Nom de l'inteface virtuelle TUN
-tun=tun0
-# Adresse locale (entrée du tunnel)
-inport=123
-# Adresse distante (sortie du tunnel)
-outip=172.16.2.163
-outport=123
-```
-
-## Explications
-
-Pour avoir plus d'informations sur le projet, le rapport PDF est disponible dans le répertoire docs avec les captures de tests Wireshark.

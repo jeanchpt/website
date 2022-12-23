@@ -31,8 +31,6 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
 										<img
 											class="rounded-xl shadow-lg"
 											src={post.frontmatter.heroImage}
-											width={720 * 2}
-											style="aspect-ratio: 1.75;"
 											alt="Miniature"
 										/>
 										<div class="mt-3">
