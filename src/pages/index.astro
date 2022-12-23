@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import BasicScripts from "../components/BasicScripts.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 const Studies = "/images/studies.jpg";
 const CCNA = "/images/ccna.png";
@@ -14,7 +15,8 @@ const CCNA = "/images/ccna.png";
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<main class="bg-zinc-200 min-h-screen">
+		<BasicScripts />
+		<main class="bg-zinc-200 dark:bg-zinc-800 min-h-screen">
 			<header>
 				<div
 					class="text-center mb-10 bg-fixed shadow-lg"
@@ -33,7 +35,7 @@ const CCNA = "/images/ccna.png";
 				</div>
 			</header>
 			<section class="container mb-10 mx-auto">
-				<h2 class="text-2xl font-bold leading-tight mb-4">
+				<h2 class="text-2xl font-bold leading-tight mb-4 dark:text-white">
 					À propos de moi
 				</h2>
 				<div class="container mx-auto">
@@ -61,7 +63,7 @@ const CCNA = "/images/ccna.png";
 				</div>
 			</section>
 			<section class="container mb-10 mx-auto">
-				<h2 class="text-2xl font-bold leading-tight mb-4">
+				<h2 class="text-2xl font-bold leading-tight mb-4 dark:text-white">
 					Ma formation
 				</h2>
 				<div class="grid">
@@ -159,7 +161,7 @@ const CCNA = "/images/ccna.png";
 				</div>
 			</section>
 			<section class="container mx-auto">
-				<h2 class="text-2xl font-bold leading-tight mb-4">
+				<h2 class="text-2xl font-bold leading-tight mb-4 dark:text-white">
 					Voici quelques-uns de mes projets !
 				</h2>
 				<div class="grid grid-cols-3 gap-4">

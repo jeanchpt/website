@@ -1,5 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import ToggleTheme from './ToggleTheme.astro';
 import { SITE_TITLE } from '../config';
 const Image = '/images/profile.jpg'
 ---
@@ -15,6 +16,7 @@ const Image = '/images/profile.jpg'
             <HeaderLink href="/posts">Blog</HeaderLink>
 			<HeaderLink href="https://github.com/JeanChpt" target="_blank">GitHub</HeaderLink>
 			<HeaderLink href="https://linkedin.com/in/jeanchaput" target="_blank">LinkedIn</HeaderLink>
+			<ToggleTheme />
         </div>
 	</nav>
 </header>
