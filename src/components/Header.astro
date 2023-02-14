@@ -1,22 +1,31 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import ToggleTheme from './ToggleTheme.astro';
-import { SITE_TITLE } from '../config';
-const Image = '/images/profile.jpg'
+import HeaderLink from "./HeaderLink.astro";
+import ToggleTheme from "./ToggleTheme.astro";
+import { SITE_TITLE } from "../config";
+const Image = "/images/profile.jpg";
 ---
 
 <header class="w-full bg-zinc-200 shadow-lg dark:bg-zinc-900">
-	<nav class="container mx-auto flex items-center justify-between px-4 py-5">
-		<div class="flex items-center">
-			<img src={Image} alt="Photo de profil" class="w-8 h-8 rounded-full mr-2" />
-            <h1 class="text-xl font-bold mr-2 dark:text-white">{SITE_TITLE}</h1>
-        </div>
-		<div class="flex items-center dark:text-white">
-            <HeaderLink href="/">Accueil</HeaderLink>
-            <HeaderLink href="/posts">Blog</HeaderLink>
-			<HeaderLink href="https://github.com/JeanChpt" target="_blank">GitHub</HeaderLink>
-			<HeaderLink href="https://linkedin.com/in/jeanchaput" target="_blank">LinkedIn</HeaderLink>
-			<ToggleTheme />
-        </div>
-	</nav>
+  <nav class="container mx-auto flex items-center justify-between px-4 py-5">
+    <div class="flex items-center">
+      <img
+        src={Image}
+        alt="Photo de profil"
+        class="w-8 h-8 rounded-full mr-2"
+      />
+      <h1 class="text-xl font-bold mr-2 dark:text-white hidden md:block">{SITE_TITLE}</h1>
+    </div>
+    <div class="flex items-center dark:text-white">
+      <HeaderLink href="/">Accueil</HeaderLink>
+      <HeaderLink href="/posts">Blog</HeaderLink>
+      <HeaderLink href="https://ctftime.org/team/213322" target="_blank">CTF</HeaderLink>
+      <HeaderLink href="https://github.com/JeanChpt" target="_blank"
+        >GitHub</HeaderLink
+      >
+      <HeaderLink href="https://linkedin.com/in/jeanchaput" target="_blank"
+        >LinkedIn</HeaderLink
+      >
+      <ToggleTheme />
+    </div>
+  </nav>
 </header>
