@@ -18,7 +18,7 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body class="bg-zinc-200 dark:bg-zinc-900">
 		<Header />
 		<BasicScripts />
 		<main class="bg-zinc-200 min-h-screen dark:bg-zinc-900">
