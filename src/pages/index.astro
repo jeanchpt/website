@@ -13,7 +13,7 @@ const CCNA = "/images/ccna.png";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body class="bg-zinc-200 dark:bg-zinc-900">
     <Header title={SITE_TITLE} />
     <BasicScripts />
     <main class="bg-zinc-200 dark:bg-zinc-900 min-h-screen">
@@ -24,10 +24,10 @@ const CCNA = "/images/ccna.png";
         >
           <div class="pt-20 pb-36 backdrop-blur-sm">
             <h1 class="text-3xl font-bold leading-tight">
-              Hello ! I am <span class="text-orange-500">Jean</span>
+              Hello ! My name is <span class="text-orange-500">Jean</span>
             </h1>
             <p class="text-xl font-light leading-normal mt-2">
-              Welcome on my website
+              Welcome on my personal website
             </p>
           </div>
         </div>
@@ -41,24 +41,20 @@ const CCNA = "/images/ccna.png";
             class="bg-white rounded-lg shadow-lg p-5 dark:bg-zinc-800 dark:text-white"
           >
             <p class="text-lg text-justify font-normal leading-normal mb-3">
-              Passionné d'informatique et de technologies en tout genre,
-              j'étudie la sécurité informatique au sein de l'Université
-              d'Aix-Marseille. En parallèle je me renseigne et développe mes
-              compétences dans divers domaines au travers de lectures ou projets
-              personnels.
+              Passionate about computer science and new technologies, I am
+              currently studying information security in Aix-Marseille
+              University.
             </p>
             <p class="text-lg text-justify font-normal leading-normal">
-              Ce blog existe dans le but de conserver une trace de mes
-              recherches et de faire le lien avec mes différents projets. Ces
-              recherches sont synthétisées sous forme de blog sur la page prévue
-              à cet effet. Bonne lecture !
+              Simultaneously I keep improving myself by solving new challenges, doing
+              some CTF and also reading books and articles.
             </p>
           </div>
         </div>
       </section>
       <section class="container mb-10 mx-auto px-3">
         <h2 class="text-2xl font-bold leading-tight mb-4 dark:text-white">
-          Ma formation
+          Education
         </h2>
         <div class="grid">
           <div class="grid grid-cols-2 lg:grid-cols-3">
@@ -68,12 +64,12 @@ const CCNA = "/images/ccna.png";
               <div>
                 <div class="grid grid-cols-2">
                   <h3 class="text-xl font-bold leading-tight mb-2">
-                    Master fiabilité et sécurité informatique
+                    Information fiability and security master degree
                   </h3>
                   <h3
                     class="text-lg font-light leading-tight text-right text-zinc-700 dark:text-zinc-300"
                   >
-                    Depuis Sept. 2022
+                    Since Sept. 2022
                   </h3>
                 </div>
                 <a
@@ -81,25 +77,24 @@ const CCNA = "/images/ccna.png";
                   href="https://www.univ-amu.fr/"
                   target="_blank"
                 >
-                  Université d'Aix-Marseille
+                  Aix-Marseille University, Marseille, France
                 </a>
                 <p
                   class="text-lg text-justify font-normal leading-normal mt-3 mb-4"
                 >
-                  Il s'agit de ma formation actuelle au sein de l'Université
-                  d'Aix-Marseille.
+                  My current course.
                 </p>
               </div>
               <hr class="border-t border-zinc-300 mb-4 dark:border-zinc-700" />
               <div>
                 <div class="grid grid-cols-2">
                   <h3 class="text-xl font-bold leading-tight mb-2">
-                    Licence informatique
+                    Computer science license
                   </h3>
                   <h3
                     class="text-lg font-light leading-tight text-right text-zinc-700 dark:text-zinc-300"
                   >
-                    Sept. 2019 à Juin 2022
+                    From Sept. 2019 to June 2022
                   </h3>
                 </div>
                 <a
@@ -108,20 +103,20 @@ const CCNA = "/images/ccna.png";
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Université Claude Bernard Lyon 1
+                  Claude Bernard University, Lyon, France
                 </a>
                 <p
                   class="text-lg text-justify font-normal leading-normal mt-3 mb-4"
                 >
-                  C'est ici que j'ai démarré mon cursus en informatique et
-                  obtenu ma licence en juin 2022 !
+                  Where I started my studies and confirmed my passion for
+                  computer science.
                 </p>
               </div>
               <hr class="border-t border-zinc-300 mb-4 dark:border-zinc-700" />
               <div class="grid grid-cols-5">
                 <div class="col-span-4">
                   <h3 class="text-xl font-bold leading-tight mb-2">
-                    Certification réseaux CISCO
+                    Cisco's introduction to networks certification
                   </h3>
                   <a
                     class="text-lg text-orange-500 hover:text-orange-700 italic leading-tight"
@@ -134,15 +129,14 @@ const CCNA = "/images/ccna.png";
                   <p
                     class="text-lg text-justify font-normal leading-normal mt-3"
                   >
-                    C'est ici que j'ai démarré mon cursus en informatique et
-                    obtenu ma licence en juin 2022 !
+                    Basics of networking.
                   </p>
                 </div>
                 <div>
                   <h3
                     class="text-lg font-light leading-tight text-right text-zinc-700 mb-4 dark:text-zinc-300"
                   >
-                    Déc. 2021
+                    Dec. 2021
                   </h3>
                   <img class="my-auto ml-auto mr-0" src={CCNA} width="35%" />
                 </div>
@@ -156,14 +150,14 @@ const CCNA = "/images/ccna.png";
       </section>
       <section class="container mx-auto px-3">
         <h2 class="text-2xl font-bold leading-tight mb-4 dark:text-white">
-          Voici quelques-uns de mes projets !
+          Some projects
         </h2>
         <div class="grid grid-cols-3 gap-4">
           <div
             class="col-span-3 bg-white rounded-lg shadow-lg p-5 dark:bg-zinc-800 dark:text-white"
           >
             <h3 class="text-xl font-bold leading-tight">
-              École Saint-Louis Notre Dame
+              Saint-Louis Notre Dame school's website
             </h3>
             <a
               class="text-lg text-orange-500 hover:text-orange-700 italic leading-tight"
@@ -174,12 +168,11 @@ const CCNA = "/images/ccna.png";
               www.ecolesaintlouisnotredame.fr
             </a>
             <p class="text-lg text-justify font-normal leading-normal my-3">
-              Pour mon stage de fin de licence, j'ai développé le site internet
-              de l'École Saint-Louis Notre Dame de Saint-Chamond.
+              For my license internship, I developed a school's website
             </p>
-            <p class="text-lg text-justify font-light leading-normal">
-              Cela fût un projet très enrichissant car mené en autonomie sur des
-              technologies que je ne connaissait pas et que j'ai dû apprendre.
+            <p class="text-lg text-justify font-normal leading-normal">
+              It was an interesting project because I was not familiar with web
+              technologies and I had to learn a lot by myself.
             </p>
           </div>
         </div>
