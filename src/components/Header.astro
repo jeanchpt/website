@@ -1,7 +1,9 @@
 ---
+import { Icon } from "astro-icon";
 import HeaderLink from "./HeaderLink.astro";
 import ToggleTheme from "./ToggleTheme.astro";
 import { SITE_TITLE } from "../config";
+import DropdownLink from "./DropdownLink.astro";
 const Image = "/images/profile.jpg";
 ---
 
@@ -13,18 +15,49 @@ const Image = "/images/profile.jpg";
         alt="Profile picture"
         class="w-8 h-8 rounded-full mr-2"
       />
-      <h1 class="text-xl font-bold mr-2 dark:text-white hidden md:block">{SITE_TITLE}</h1>
+      <h1 class="text-xl font-bold mr-2 dark:text-white">{SITE_TITLE}</h1>
     </div>
-    <div class="flex items-center dark:text-white">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/posts">Blog</HeaderLink>
-      <HeaderLink href="https://github.com/JeanChpt" target="_blank"
-        >GitHub</HeaderLink
-      >
-      <HeaderLink href="https://linkedin.com/in/jeanchaput" target="_blank"
-        >LinkedIn</HeaderLink
-      >
+
+    <div class="relative inline-block items-center dark:text-white md:hidden text-right">
+      <button
+        type="button" 
+        id="menu-button"
+        class="font-bold p-2.5 inline-flex items-center hover:cursor-pointer hover:text-orange-500"
+        data-aw-toggle-menu>
+          <Icon name="mdi:menu" class="w-6 h-6"/>
+      </button>
+    </div>
+
+    <div class="md:flex hidden items-center dark:text-white text-right">
+      <HeaderLink href="/">
+        Home
+      </HeaderLink>
+      <HeaderLink href="/posts">
+        Blog
+      </HeaderLink>
+      <HeaderLink href="https://github.com/JeanChpt" target="_blank">
+        GitHub
+      </HeaderLink>
+      <HeaderLink href="https://linkedin.com/in/jeanchaput" target="_blank">
+        LinkedIn
+      </HeaderLink>
       <ToggleTheme />
     </div>
   </nav>
+  <div class="hidden text-left absolute w-screen shadow-lg bg-zinc-200 dark:bg-zinc-900 z-10" role="menu" aria-orientation="vertical" aria-labelledby="menu" id="menu" tabindex="-1">
+    <div class="py-1" role="none">
+      <DropdownLink href="/">
+        Home
+      </DropdownLink>
+      <DropdownLink href="/posts">
+        Blog
+      </DropdownLink>
+      <DropdownLink href="https://github.com/JeanChpt" target="_blank">
+        GitHub
+      </DropdownLink>
+      <DropdownLink href="https://linkedin.com/in/jeanchaput" target="_blank">
+        LinkedIn
+      </DropdownLink>
+    </div>
+  </div>
 </header>
