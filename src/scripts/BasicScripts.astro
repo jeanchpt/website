@@ -25,5 +25,8 @@
 			document.documentElement.classList.toggle('dark');
 			localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
 		});
+    attachEvent('[data-aw-toggle-menu]', 'click', function () {
+			document.getElementById("menu").classList.toggle('hidden');
+		});
 	};
 </script>
