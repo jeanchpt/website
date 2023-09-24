@@ -1,0 +1,53 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BasicScripts from "../scripts/BasicScripts.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-zinc-200 dark:bg-zinc-900">
+    <Header title={SITE_TITLE} />
+    <BasicScripts />
+    <main class="bg-zinc-200 dark:bg-zinc-900 min-h-screen">
+      <section class="container my-10 mx-auto px-3">
+        <h2 class="text-2xl font-bold leading-tight mb-4 dark:text-white">
+          TryHackMe
+        </h2>
+        <div class="container mx-auto">
+          <div
+            class="bg-white rounded-lg shadow-lg p-5 dark:bg-zinc-800 dark:text-white"
+          >
+            <p class="text-lg text-justify font-normal leading-normal mb-3">
+              Passionate about computer science and new technologies, I am
+              currently studying information security in Aix-Marseille
+              University.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="container my-10 mx-auto px-3">
+        <h2 class="text-2xl font-bold leading-tight mb-4 dark:text-white">
+          RootMe
+        </h2>
+        <div class="container mx-auto">
+          <div
+            class="bg-white rounded-lg shadow-lg p-5 dark:bg-zinc-800 dark:text-white"
+          >
+            <p class="text-lg text-justify font-normal leading-normal mb-3">
+              Passionate about computer science and new technologies, I am
+              currently studying information security in Aix-Marseille
+              University.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
