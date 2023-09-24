@@ -12,11 +12,12 @@ export interface Props {
     description: string;
     pubDate: Date;
     updatedDate: Date;
+    heroImage: string;
   };
 }
 
 const {
-  content: { title, description, pubDate, updatedDate },
+  content: { title, description, pubDate, updatedDate, heroImage },
 } = Astro.props;
 ---
 
@@ -32,23 +33,25 @@ const {
         <div
           class="bg-white rounded-xl shadow-lg mx-auto p-5 max-w-4xl dark:bg-zinc-800"
         >
-          <div class="font-light text-right dark:text-zinc-300">
+          <div class="font-bold text-right mb-2 dark:text-zinc-300">
+            {heroImage && <img class="mb-4" src={heroImage} alt="" />}
             <FormattedDate date={pubDate} />
             {
               updatedDate && (
-                <div class="last-updated-on">
+                <div class="font-normal italic">
                   Last updated on <FormattedDate date={updatedDate} />
                 </div>
               )
             }
           </div>
+          <hr />
           {
             updatedDate ? (
-              <article class="prose prose-blue min-w-fit -mt-12 dark:prose-invert">
+              <article class="prose prose-blue min-w-fit -mt-14 dark:prose-invert">
                 <slot />
               </article>
             ) : (
-              <article class="prose prose-blue max-w-fit -mt-8 dark:prose-invert">
+              <article class="prose prose-blue max-w-fit -mt-5 dark:prose-invert">
                 <slot />
               </article>
             )
