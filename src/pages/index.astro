@@ -20,14 +20,14 @@ const CCNA = "/images/ccna.png";
       <header>
         <div
           class="text-center mb-10 bg-fixed shadow-lg"
-          style="background-image: url(/images/cover.jpg)"
+          style="background-image: url(/images/cover.jpg); background-size: contain"
         >
-          <div class="pt-20 pb-36 backdrop-blur-sm">
-            <h1 class="text-3xl font-bold leading-tight">
-              Hello ! My name is <span class="text-orange-500">Jean</span>
+          <div class="pt-36 pb-36 backdrop-blur-sm">
+            <h1 class="text-3xl text-white font-bold leading-tight">
+              Hello ! My name is <span class="text-blue-500">Jean</span>
             </h1>
-            <p class="text-xl font-light leading-normal mt-2">
-              Welcome on my personal website
+            <p class="text-xl text-white font-light leading-normal mt-2">
+              Welcome on my personal blog
             </p>
           </div>
         </div>
@@ -41,13 +41,14 @@ const CCNA = "/images/ccna.png";
             class="bg-white rounded-lg shadow-lg p-5 dark:bg-zinc-800 dark:text-white"
           >
             <p class="text-lg text-justify font-normal leading-normal mb-3">
-              Passionate about computer science and new technologies, I am
-              currently studying information security in Aix-Marseille
-              University.
+              Passionate about computer sciences and cybersecurity, I enjoy
+              spending my free time learning by myself and doing some CTF. I am
+              very interested in networks security, systems and digital
+              investigation but I am open to discover.
             </p>
-            <p class="text-lg text-justify font-normal leading-normal">
-              Simultaneously I keep improving myself by solving new challenges, doing
-              some CTF and also reading books and articles.
+            <p class="text-lg text-justify font-normal leading-normal mb-3">
+              I am currently looking for a graduation internship starting in
+              April 2024 for 6 months.
             </p>
           </div>
         </div>
@@ -56,94 +57,88 @@ const CCNA = "/images/ccna.png";
         <h2 class="text-2xl font-bold leading-tight mb-4 dark:text-white">
           Education
         </h2>
-        <div class="grid">
-          <div class="grid grid-cols-2 lg:grid-cols-3">
-            <div
-              class="col-span-2 bg-white rounded-lg lg:rounded-r-none shadow-lg p-5 dark:bg-zinc-800 dark:text-white"
-            >
-              <div>
-                <div class="grid grid-cols-2">
-                  <h3 class="text-xl font-bold leading-tight mb-2">
-                    Master's degree in information security
-                  </h3>
-                  <h3
-                    class="text-lg font-light leading-tight text-right text-zinc-700 dark:text-zinc-300"
-                  >
-                    Since Sept. 2022
-                  </h3>
-                </div>
-                <a
-                  class="text-lg text-orange-500 hover:text-orange-700 italic leading-tight"
-                  href="https://www.univ-amu.fr/"
-                  target="_blank"
-                >
-                  Aix-Marseille University, Marseille, France
-                </a>
-                <p
-                  class="text-lg text-justify font-normal leading-normal mt-3 mb-4"
-                >
-                  My current course.
-                </p>
-              </div>
-              <hr class="border-t border-zinc-300 mb-4 dark:border-zinc-700" />
-              <div>
-                <div class="grid grid-cols-2">
-                  <h3 class="text-xl font-bold leading-tight mb-2">
-                    Bachelor in computer sciences
-                  </h3>
-                  <h3
-                    class="text-lg font-light leading-tight text-right text-zinc-700 dark:text-zinc-300"
-                  >
-                    From Sept. 2019 to June 2022
-                  </h3>
-                </div>
-                <a
-                  class="text-lg text-orange-500 hover:text-orange-700 italic leading-tight"
-                  href="https://www.univ-lyon1.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Claude Bernard University, Lyon, France
-                </a>
-                <p
-                  class="text-lg text-justify font-normal leading-normal mt-3 mb-4"
-                >
-                  Where I started my studies and confirmed my passion for
-                  computer science.
-                </p>
-              </div>
-              <hr class="border-t border-zinc-300 mb-4 dark:border-zinc-700" />
-              <div class="grid grid-cols-5">
-                <div class="col-span-4">
-                  <h3 class="text-xl font-bold leading-tight mb-2">
-                    Cisco's introduction to networks certification
-                  </h3>
-                  <a
-                    class="text-lg text-orange-500 hover:text-orange-700 italic leading-tight"
-                    href="https://www.netacad.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Cisco Networking Academy
-                  </a>
-                  <p
-                    class="text-lg text-justify font-normal leading-normal mt-3"
-                  >
-                    Basics of networking.
-                  </p>
-                </div>
-                <div>
-                  <h3
-                    class="text-lg font-light leading-tight text-right text-zinc-700 mb-4 dark:text-zinc-300"
-                  >
-                    Dec. 2021
-                  </h3>
-                  <img class="my-auto ml-auto mr-0" src={CCNA} width="35%" />
-                </div>
-              </div>
+        <div
+          class="bg-white rounded-lg shadow-lg p-5 dark:bg-zinc-800 dark:text-white"
+        >
+          <div>
+            <div class="grid grid-cols-2">
+              <h3 class="text-xl font-bold leading-tight mb-2">
+                Master's degree in IT reliability and security
+              </h3>
+              <h3
+                class="text-lg font-light leading-tight text-right text-zinc-700 dark:text-zinc-300"
+              >
+                Since Sept. 2022
+              </h3>
             </div>
-            <div class="rounded-r-lg shadow-lg hidden lg:block">
-              <img class="rounded-r-lg" src={Studies} />
+            <a
+              class="text-lg text-blue-500 hover:text-blue-700 italic leading-tight"
+              href="https://www.univ-amu.fr/"
+              target="_blank"
+            >
+              Aix-Marseille University, Marseille, France
+            </a>
+            <ul
+              class="list-inside list-disc text-lg font-normal leading-normal mt-3 mb-4"
+            >
+              <li>SecNumEdu certified course (by ANSSI).</li>
+              <li>Learned how to manage a project from beginning to delivery.</li>
+              <li>Studied cryptography and network basis.</li>
+              <li>Completed a network project that was about creating an IPv6 tunnel on an IPv4 network.</li>
+            </ul>
+          </div>
+          <hr class="border-t border-zinc-300 mb-4 dark:border-zinc-700" />
+          <div>
+            <div class="grid grid-cols-2">
+              <h3 class="text-xl font-bold leading-tight mb-2">
+                Bachelor in computer sciences
+              </h3>
+              <h3
+                class="text-lg font-light leading-tight text-right text-zinc-700 dark:text-zinc-300"
+              >
+                From Sept. 2019 to June 2022
+              </h3>
+            </div>
+            <a
+              class="text-lg text-blue-500 hover:text-blue-700 italic leading-tight"
+              href="https://www.univ-lyon1.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Claude Bernard University, Lyon, France
+            </a>
+            <p
+              class="text-lg text-justify font-normal leading-normal mt-3 mb-4"
+            >
+              Where I started my studies and confirmed my passion for computer
+              science.
+            </p>
+          </div>
+          <hr class="border-t border-zinc-300 mb-4 dark:border-zinc-700" />
+          <div class="grid grid-cols-5">
+            <div class="col-span-4">
+              <h3 class="text-xl font-bold leading-tight mb-2">
+                Cisco's introduction to networks certification
+              </h3>
+              <a
+                class="text-lg text-blue-500 hover:text-blue-700 italic leading-tight"
+                href="https://www.netacad.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Cisco Networking Academy
+              </a>
+              <p class="text-lg text-justify font-normal leading-normal mt-3">
+                Basics of networking.
+              </p>
+            </div>
+            <div>
+              <h3
+                class="text-lg font-light leading-tight text-right text-zinc-700 mb-4 dark:text-zinc-300"
+              >
+                Dec. 2021
+              </h3>
+              <img class="my-auto ml-auto mr-0" src={CCNA} width="35%" />
             </div>
           </div>
         </div>
@@ -160,7 +155,7 @@ const CCNA = "/images/ccna.png";
               Saint-Louis Notre Dame school's website
             </h3>
             <a
-              class="text-lg text-orange-500 hover:text-orange-700 italic leading-tight"
+              class="text-lg text-blue-500 hover:text-blue-700 italic leading-tight"
               href="https://www.ecolesaintlouisnotredame.fr"
               target="_blank"
               rel="noopener noreferrer"
