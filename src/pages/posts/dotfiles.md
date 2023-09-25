@@ -68,4 +68,4 @@ To retrieve the modifications made on another computer, use :
 config pull
 ```
 
-In fact you can use every `git` command with your `config` alias.
+In fact you can use every `git` command by replacing `git` with your `config` alias.
