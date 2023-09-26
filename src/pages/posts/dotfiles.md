@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "How to store dotfiles"
 description: "Let me introduce my way of storing dotfiles on a versioning platform"
 pubDate: "Sept. 24 2023"
-updatedDate: "19 Dec. 2022"
+#updatedDate: "19 Dec. 2022"
 heroImage: "/heroes/dotfiles.jpg"
 ---
 
